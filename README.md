@@ -1,21 +1,53 @@
-# RISUKA PIALA — Website Promosi
+﻿# RISUKA PIALA — Website Toko Piala
 
-Paket website statis untuk promosi RISUKA PIALA.
+Website promosi digital untuk **RISUKA PIALA**, usaha yang bergerak di bidang penjualan piala dan trofi.
 
-## Isi paket
-- `index.html` — halaman utama, koleksi contoh piala, layanan, alamat dan kontak.
-- `style.css` — desain responsif untuk desktop dan ponsel.
-- `script.js` — navigasi mobile dan tahun otomatis.
+Proyek ini dikembangkan oleh HUI TEKNO untuk membantu usaha memperkenalkan produk, menampilkan koleksi piala, dan menyediakan informasi usaha melalui website.
 
-## Menjalankan
-Cara termudah: buka `index.html` di browser, atau buka folder ini di VS Code dan gunakan ekstensi Live Server.
+## Tentang Proyek
 
-Tidak membutuhkan `npm install`, database, atau server backend untuk versi promosi ini.
+RISUKA PIALA Website merupakan proyek pengembangan web yang berfokus pada kebutuhan promosi digital usaha lokal. Website dirancang agar calon pelanggan dapat mengenal produk yang ditawarkan melalui tampilan yang mudah diakses.
 
-## Detail yang digunakan
-- Nama: RISUKA PIALA
-- Alamat: Pulau Bunjung
-- Admin: 0858-3143-4588
-- Tombol WhatsApp: `https://wa.me/6285831434588`
+## Tujuan
 
-Catatan: visual piala pada halaman merupakan ilustrasi CSS, bukan foto produk aktual. Konfirmasikan harga, stok, dan detail pesanan kepada admin.
+- Membangun identitas digital RISUKA PIALA.
+- Menampilkan koleksi produk piala dan trofi.
+- Mempermudah calon pelanggan mengenal produk dan usaha.
+- Menjadi bagian dari portofolio pengembangan web HUI TEKNO.
+
+## Teknologi
+
+- HTML — struktur halaman website.
+- CSS — desain dan tata letak.
+- JavaScript — interaksi dan fungsionalitas halaman.
+- Git — pengelolaan versi kode.
+- GitHub — penyimpanan kode sumber dan dokumentasi proyek.
+
+## Struktur Proyek
+
+- `index.html` — halaman utama website.
+- `admin.html` — halaman administrasi proyek.
+- `style.css` — aturan desain dan tampilan.
+- `script.js` — logika interaksi JavaScript.
+- `assets/` — aset gambar dan media website.
+
+## Menjalankan Proyek
+
+1. Clone repository ke komputer.
+2. Buka folder proyek.
+3. Buka `index.html` menggunakan browser untuk melihat halaman utama.
+
+## Status Proyek
+
+Proyek telah diunggah ke GitHub sebagai repository publik. Pengembangan dan penyempurnaan dapat dilakukan secara bertahap.
+
+## Pengembang
+
+**HUI TEKNO**  
+Web Development & Digital Solutions
+
+Repository: https://github.com/risukadigital/risuka-piala-website
+
+---
+
+*RISUKA PIALA — Membangun identitas usaha melalui kehadiran digital.*
