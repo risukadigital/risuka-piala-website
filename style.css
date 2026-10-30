@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+:root{--navy:#101d32;--navy2:#172945;--gold:#e9b94e;--gold2:#ffd77b;--cream:#fbf8f0;--muted:#687386;--white:#fff;--line:#e8e2d6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'DM Sans',sans-serif;color:var(--navy);background:#fff}a{color:inherit;text-decoration:none}.site-header{height:78px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid #eee}.brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;letter-spacing:.07em}.brand b{color:#bd8520}.brand-mark{display:grid;place-items:center;width:38px;height:38px;background:var(--navy);border-radius:12px;font-size:20px}.site-header nav{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:600}.site-header nav a:hover{color:#bd8520}.nav-cta{background:var(--navy);color:#fff!important;padding:12px 17px;border-radius:8px}.menu-toggle{display:none;border:0;background:none;font-size:24px}.hero{background:radial-gradient(ellipse at 80% 30%,#283c5a 0,#172945 35%,#101d32 75%);color:#fff;min-height:560px;padding:65px 9%;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px;overflow:hidden}.eyebrow{font-size:11px;letter-spacing:.2em;font-weight:700;color:#c18d30;margin:0 0 17px}.hero .eyebrow{color:var(--gold2)}h1,h2{font-family:'Playfair Display',serif;letter-spacing:-.035em}h1{font-size:clamp(42px,5vw,65px);line-height:1.1;margin:0 0 22px}h1 span,.section-heading h2 span{color:var(--gold)}.hero-copy{color:#d2d9e4;line-height:1.8;max-width:520px;font-size:15px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.button{display:inline-flex;justify-content:center;align-items:center;padding:14px 19px;border-radius:8px;font-size:13px;font-weight:700;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button-gold{background:var(--gold);color:#182338}.button-outline{border:1px solid #718098;color:#fff}.hero-notes{display:flex;gap:22px;flex-wrap:wrap;color:#d7dfeb;font-size:11px;margin-top:26px}.hero-art{height:390px;position:relative;display:grid;place-items:center}.halo{position:absolute;width:340px;height:340px;border-radius:50%;border:1px solid #ffffff20;background:radial-gradient(circle,#e8b84d20,transparent 65%);box-shadow:0 0 0 35px #ffffff05,0 0 0 70px #ffffff03}.spark{position:absolute;color:var(--gold2);font-size:32px}.spark-one{top:42px;right:45px}.spark-two{left:35px;top:100px}.hero-caption{position:absolute;bottom:2px;display:flex;flex-direction:column;align-items:center;gap:6px;letter-spacing:.16em;font-size:12px}.hero-caption small{color:#b9c3d2;letter-spacing:.04em;font-size:11px}.trophy{position:relative;width:145px;height:190px;filter:drop-shadow(0 16px 15px #0003);z-index:1}.cup-body{position:absolute;top:24px;left:32px;width:81px;height:78px;background:linear-gradient(100deg,#a86613,#ffe58a 25%,#d79a25 48%,#fff0a0 65%,#a76b15);clip-path:polygon(0 0,100% 0,85% 60%,64% 88%,36% 88%,15% 60%);border-radius:0 0 28px 28px}.cup-top{position:absolute;top:18px;left:29px;width:87px;height:15px;border-radius:50%;background:linear-gradient(90deg,#b47b19,#ffed9d,#c28a24)}.handle{position:absolute;top:35px;width:34px;height:47px;border:8px solid #dca738;border-radius:50%;z-index:-1}.handle-left{left:7px}.handle-right{right:7px}.cup-stem{position:absolute;top:98px;left:65px;width:15px;height:36px;background:linear-gradient(90deg,#9e6415,#ffe28a,#b77b1c)}.cup-base{position:absolute;top:129px;left:43px;width:59px;height:17px;background:linear-gradient(90deg,#a76b18,#ffe58c,#c88e21);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}.cup-foot{position:absolute;top:145px;left:31px;width:83px;height:14px;border-radius:3px;background:linear-gradient(90deg,#a86d18,#ffe99a,#b37a1a)}.trophy-hero{transform:scale(1.65) translateY(-15px)}.trophy-silver .cup-body,.trophy-silver .cup-top,.trophy-silver .handle,.trophy-silver .cup-stem,.trophy-silver .cup-base,.trophy-silver .cup-foot{background:linear-gradient(100deg,#77879a,#fff 30%,#b8c4d0 52%,#fff 70%,#7b8a9d);border-color:#bfcbd6}.trophy-bronze .cup-body,.trophy-bronze .cup-top,.trophy-bronze .cup-stem,.trophy-bronze .cup-base,.trophy-bronze .cup-foot{background:linear-gradient(100deg,#8b4a24,#f4c08b 30%,#b66a36 55%,#f7d0a2 70%,#85451f)}.trophy-bronze .handle{border-color:#c07a49}.trust-strip{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;padding:22px 5%;background:#f7f3e9;color:#526075;font-size:10px;letter-spacing:.13em;font-weight:700}.trust-strip i{font-style:normal;color:#c18d30}.section{padding:86px 8%}.section-heading{text-align:center;max-width:650px;margin:0 auto 42px}.section-heading h2,.service-inner h2,.contact-card h2{font-size:clamp(31px,4vw,43px);line-height:1.15;margin:0 0 15px}.section-heading>p:last-child{color:var(--muted);font-size:13px;line-height:1.8}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:auto}.product-card{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s}.product-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px #15243b12}.product-visual{height:235px;display:grid;place-items:center;position:relative;overflow:hidden}.visual-gold{background:linear-gradient(135deg,#f8edcf,#f3dfaa)}.visual-silver{background:linear-gradient(135deg,#e6ebf1,#cbd5df)}.visual-bronze{background:linear-gradient(135deg,#f3dfd0,#dfb59b)}.product-visual .trophy{transform:scale(1.02)}.product-number{position:absolute;left:17px;top:15px;font-size:11px;letter-spacing:.1em;color:#26344a80}.product-info{padding:22px}.product-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#a67521;font-weight:700}.product-info h3{font-family:'Playfair Display',serif;font-size:23px;margin:9px 0}.product-info p{color:var(--muted);font-size:12px;line-height:1.7;min-height:42px}.product-info a{display:inline-block;margin-top:9px;color:#a67521;font-size:12px;font-weight:700}.notice{text-align:center;font-size:10px;color:#8790a0;margin-top:26px}.service-section{background:var(--navy);color:#fff;padding:72px 9%}.service-inner{max-width:1050px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.service-inner>div:first-child>p:not(.eyebrow){color:#c6d0de;font-size:13px;line-height:1.8;max-width:420px}.service-steps{display:grid;gap:22px}.service-steps>div{display:flex;gap:17px;align-items:center}.service-steps>div>b{font-family:'Playfair Display',serif;color:var(--gold);font-size:25px}.service-steps span{display:grid;gap:5px}.service-steps strong{font-size:13px}.service-steps small{font-size:11px;color:#b8c4d4}.contact-section{background:var(--cream)}.contact-card{max-width:1000px;margin:auto;padding:42px 48px;background:#fff;border:1px solid #eee5d6;border-radius:15px;display:flex;align-items:center;justify-content:space-between;gap:30px;box-shadow:0 15px 50px #6b4c1710}.contact-card h2{font-size:35px}.contact-card p:not(.eyebrow){color:var(--muted);font-size:13px;line-height:1.7;max-width:540px}.contact-detail{display:inline-flex;align-items:center;gap:10px;margin:12px 25px 0 0}.contact-detail>span{font-size:20px}.contact-detail div{display:grid;gap:4px}.contact-detail small{color:var(--muted);font-size:10px}.contact-detail strong{font-size:12px}.contact-button{white-space:nowrap}footer{padding:35px 8%;text-align:center}footer .brand{justify-content:center}footer p{font-size:12px;color:var(--muted)}footer>small{font-size:10px;color:#8a93a2}.menu-toggle{color:var(--navy)}
+@media(max-width:760px){.site-header{height:68px;padding:0 5%}.menu-toggle{display:block}.site-header nav{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:20px 6%;box-shadow:0 12px 20px #0001;flex-direction:column;align-items:stretch;gap:18px}.site-header nav.open{display:flex}.hero{padding:54px 7% 35px;grid-template-columns:1fr;gap:0}.hero-art{height:300px;grid-row:1}.trophy-hero{transform:scale(1.2) translateY(-5px)}.halo{width:250px;height:250px}.hero-content{padding-bottom:20px}.hero-notes{gap:12px}.trust-strip{gap:10px 14px;font-size:9px}.trust-strip i{display:none}.section{padding:62px 6%}.product-grid{grid-template-columns:1fr;max-width:430px}.product-visual{height:220px}.service-section{padding:58px 7%}.service-inner{grid-template-columns:1fr;gap:32px}.contact-card{padding:30px 24px;display:block}.contact-card h2{font-size:30px}.contact-button{margin-top:25px;width:100%}.contact-detail{margin-right:12px}.hero-actions .button{width:100%}}
+
+/* Tambahan RISUKA PIALA */
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.photo-gallery { padding: 64px 5%; }
+.photo-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; margin-top: 28px; }
+.photo-grid > div { overflow: hidden; border-radius: 14px; background: #fff; box-shadow: 0 5px 20px #00000012; }
+.photo-grid img { width: 100%; height: 210px; object-fit: cover; display: block; }
+.photo-grid p { padding: 10px 14px; margin: 0; font-weight: 600; }
+.map-section { padding: 50px 5%; }
+.map-frame { overflow: hidden; border-radius: 16px; }
+@media(max-width:800px) { .photo-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:460px) { .photo-grid img { height: 150px; } }
+
+/* Tiga perbaikan visual RISUKA PIALA */
+.hero-logo-art {
+  min-height: 390px;
+  height: auto;
+  display: grid;
+  place-items: center;
+}
+
+.hero-logo-art .halo {
+  width: 280px;
+  height: 280px;
+}
+
+.hero-logo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(100%, 340px);
+  max-height: 340px;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 24px #00000025);
+}
+
+.trust-strip span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #26364d;
+  line-height: 1.7;
+}
+
+.photo-gallery {
+  padding-top: 38px;
+}
+
+.photo-gallery > .eyebrow {
+  margin-bottom: 8px;
+}
+
+.photo-gallery > h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  .hero-logo-art {
+    min-height: 270px;
+  }
+
+  .hero-logo {
+    width: min(80%, 260px);
+    max-height: 250px;
+  }
+
+  .trust-strip span {
+    font-size: 12px;
+  }
+
+  .photo-gallery {
+    padding-top: 30px;
+  }
+}
+
+/* Penyempurnaan tampilan kategori dan galeri */
+.trust-strip {
+  padding: 18px 5%;
+  gap: 20px;
+}
+
+.trust-strip span {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #172945;
+}
+
+.photo-gallery {
+  padding-top: 24px;
+}
+
+.photo-gallery > .eyebrow {
+  margin-bottom: 6px;
+}
+
+.photo-gallery > h2 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 760px) {
+  .trust-strip {
+    gap: 10px;
+  }
+
+  .trust-strip span {
+    font-size: 12px;
+  }
+
+  .photo-gallery {
+    padding-top: 20px;
+  }
+}
+
+/* Perbaikan kontras dan ukuran kategori */
+.trust-strip {
+  background: #ffffff;
+  padding: 24px 4%;
+  gap: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.trust-strip span {
+  color: #101d32;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .035em;
+  line-height: 1.6;
+}
+
+.trust-strip i {
+  color: #b17b16;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .trust-strip {
+    padding: 20px 5%;
+    gap: 10px 14px;
+  }
+
+  .trust-strip span {
+    font-size: 15px;
+  }
+
+  .trust-strip i {
+    font-size: 14px;
+  }
+}
+
+/* Rapatkan jarak kategori ke galeri */
+.trust-strip {
+  padding-bottom: 12px;
+}
+
+.photo-gallery {
+  padding-top: 12px;
+}
+
+
+/* Informasi toko di bawah logo */
+.hero-contact {
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.hero-contact p {
+  margin: 5px 0;
+}
+
+.hero-contact a {
+  color: #ffe09a;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.hero-contact a:hover {
+  text-decoration: underline;
+}
+
+.hero-logo-art {
+  grid-template-rows: auto auto;
+  align-content: center;
+  gap: 8px;
+}
+
+.hero-logo-art .hero-logo {
+  max-height: 280px;
+}
+
+
+/* Perbesar informasi kontak di bawah logo */
+.hero-contact {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.9;
+  margin-top: 18px;
+}
+
+.hero-contact p {
+  margin: 8px 0;
+}
+
+.hero-contact a {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffe09a;
+}
+
+@media (max-width: 760px) {
+  .hero-contact {
+    font-size: 16px;
+  }
+
+  .hero-contact a {
+    font-size: 19px;
+  }
+}
+
+
+/* HILANGKAN RUANG KOSONG BERLEBIHAN PADA HERO */
+.hero {
+  min-height: 0;
+  padding: 28px 9%;
+  gap: 20px;
+}
+
+.hero-logo-art {
+  min-height: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.hero-logo-art .hero-logo {
+  max-height: 230px;
+}
+
+.hero-contact {
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.hero-contact p {
+  margin: 4px 0;
+}
+
+.trust-strip {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 0;
+    padding: 28px 6%;
+    gap: 12px;
+  }
+
+  .hero-logo-art {
+    min-height: 0;
+  }
+
+  .hero-logo-art .hero-logo {
+    max-height: 200px;
+  }
+}
+
+
+/* Rapatkan jarak vertikal antarseksi website */
+.section {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+.photo-gallery {
+  padding-top: 18px;
+  padding-bottom: 35px;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.service-inner {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.contact-section,
+.map-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .photo-gallery {
+    padding-top: 15px;
+    padding-bottom: 25px;
+  }
+}
+
+
+/* Rapatkan galeri, kontak, dan lokasi */
+.photo-gallery {
+  padding-bottom: 18px;
+}
+
+.contact-section,
+.section.contact-section {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.map-section {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+
+/* Footer emas RISUKA PIALA */
+footer {
+  background: linear-gradient(135deg, #e9b94e, #ffd77b, #e9b94e);
+  color: #101d32;
+  padding: 28px 8%;
+}
+
+footer p,
+footer span,
+footer a,
+footer small {
+  color: #101d32;
+}
+
+footer a {
+  font-weight: 700;
+}
+
+
+/* Bagian Profil, Riwayat Pesanan, dan Pelanggan */
+#profil,
+#riwayat-pesanan,
+#pelanggan {
+  padding: 64px 8%;
+  scroll-margin-top: 90px;
+}
+
+#profil {
+  background: #fffdf7;
+}
+
+#riwayat-pesanan {
+  background: #ffffff;
+}
+
+#pelanggan {
+  background: #fff8e8;
+}
+
+#profil .section-heading,
+#riwayat-pesanan .section-heading,
+#pelanggan .section-heading {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#profil h2,
+#riwayat-pesanan h2,
+#pelanggan h2 {
+  color: #171717;
+  margin-bottom: 18px;
+}
+
+#profil .section-heading > p:not(.eyebrow),
+#riwayat-pesanan .section-heading > p:not(.eyebrow),
+#pelanggan .section-heading > p:not(.eyebrow) {
+  color: #444444;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+#profil .eyebrow,
+#riwayat-pesanan .eyebrow,
+#pelanggan .eyebrow {
+  color: #a92222;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  #profil,
+  #riwayat-pesanan,
+  #pelanggan {
+    padding: 42px 6%;
+  }
+}
+
+/* Perapian jarak antarbagian RISUKA PIALA */
+#profil,
+#riwayat-pesanan,
+#pelanggan {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#profil .section-heading,
+#riwayat-pesanan .section-heading,
+#pelanggan .section-heading {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#profil h2,
+#riwayat-pesanan h2,
+#pelanggan h2 {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+#profil .section-heading > p:not(.eyebrow),
+#riwayat-pesanan .section-heading > p:not(.eyebrow),
+#pelanggan .section-heading > p:not(.eyebrow) {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+
+/* Final: rapatkan jarak antar-section */
+#profil,
+#riwayat-pesanan,
+#pelanggan {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+#profil .section-heading,
+#riwayat-pesanan .section-heading,
+#pelanggan .section-heading {
+  padding: 0 !important;
+}
+
+#profil h2,
+#riwayat-pesanan h2,
+#pelanggan h2 {
+  margin-top: 6px !important;
+  margin-bottom: 8px !important;
+}
+
+#profil .eyebrow,
+#riwayat-pesanan .eyebrow,
+#pelanggan .eyebrow {
+  margin-top: 0 !important;
+  margin-bottom: 6px !important;
+}
+
+#profil .section-heading > p:not(.eyebrow),
+#riwayat-pesanan .section-heading > p:not(.eyebrow),
+#pelanggan .section-heading > p:not(.eyebrow) {
+  margin-top: 4px !important;
+  margin-bottom: 6px !important;
+}
+
+
+/* Perbaikan jarak antara peta dan Profil */
+.map-section {
+  padding-bottom: 8px !important;
+  margin-bottom: 0 !important;
+}
+
+.map-section > a {
+  display: inline-block;
+  margin-bottom: 0 !important;
+}
+
+#profil {
+  padding-top: 12px !important;
+  margin-top: 0 !important;
+}
+
+
+/* Pangkas jarak Galeri, Hubungi Kami, dan Lokasi */
+.photo-gallery {
+  padding-bottom: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+.contact-section {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.contact-section .contact-card {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.map-section {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
+/* RISUKA PIALA — warna dan jarak Hubungi Kami & Lokasi */
+.contact-section {
+  background: #fff9ed !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.contact-section > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.contact-section h2 {
+  color: #a92222 !important;
+  margin-top: 6px !important;
+  margin-bottom: 8px !important;
+}
+
+.map-section {
+  background: #ffffff !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.map-section h2 {
+  color: #a92222 !important;
+  margin-top: 4px !important;
+  margin-bottom: 8px !important;
+}
+
+.map-section p {
+  margin-top: 4px !important;
+  margin-bottom: 8px !important;
+}
+
+.map-section iframe {
+  display: block;
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
+}
+
+
+/* RISUKA PIALA — warna dan jarak Hubungi Kami & Lokasi */
+.contact-section {
+  background: #fff9ed !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.contact-section > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.contact-section h2 {
+  color: #a92222 !important;
+  margin-top: 6px !important;
+  margin-bottom: 8px !important;
+}
+
+.map-section {
+  background: #ffffff !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.map-section h2 {
+  color: #a92222 !important;
+  margin-top: 4px !important;
+  margin-bottom: 8px !important;
+}
+
+.map-section p {
+  margin-top: 4px !important;
+  margin-bottom: 8px !important;
+}
+
+.map-section iframe {
+  display: block;
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
+}
+

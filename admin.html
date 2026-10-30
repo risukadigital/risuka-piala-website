@@ -1,0 +1,935 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin RISUKA PIALA</title>
+    <style>
+      :root {
+        --red: #a92222;
+        --gold: #e9b94e;
+        --ink: #202536;
+        --cream: #fff9ed;
+        --muted: #6b7280;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f6fa;
+        color: var(--ink);
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+        border: 0;
+        border-radius: 8px;
+        padding: 10px 14px;
+        background: var(--red);
+        color: white;
+        font-weight: 700;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid #d7dbe3;
+        border-radius: 8px;
+        background: white;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        margin: 12px 0 5px;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      small,
+      .muted {
+        color: var(--muted);
+      }
+      #login {
+        max-width: 410px;
+        margin: 8vh auto;
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 12px 40px #17203312;
+      }
+      .brand {
+        color: var(--red);
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+      #app {
+        display: none;
+        min-height: 100vh;
+      }
+      header {
+        background: white;
+        padding: 18px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        border-bottom: 1px solid #e6e8ee;
+      }
+      header h2 {
+        margin: 0;
+        font-size: 19px;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        min-height: calc(100vh - 65px);
+      }
+      aside {
+        background: var(--ink);
+        padding: 22px 14px;
+      }
+      aside button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+        background: transparent;
+        color: #e8eaf0;
+      }
+      aside button.active,
+      aside button:hover {
+        background: #ffffff18;
+        color: #ffd77b;
+      }
+      main {
+        padding: 26px;
+        min-width: 0;
+      }
+      .page {
+        display: none;
+      }
+      .page.active {
+        display: block;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+        margin: 22px 0;
+      }
+      .card,
+      .panel {
+        background: white;
+        padding: 20px;
+        border-radius: 13px;
+        border: 1px solid #e8eaf0;
+      }
+      .card strong {
+        font-size: 28px;
+        display: block;
+        margin-top: 10px;
+      }
+      .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 18px 0;
+      }
+      .toolbar input {
+        max-width: 300px;
+      }
+      .table-wrap {
+        overflow-x: auto;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e8eaf0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 650px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 13px;
+        border-bottom: 1px solid #eceef2;
+        font-size: 13px;
+      }
+      th {
+        background: var(--cream);
+      }
+      .actions {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .actions button {
+        padding: 7px 9px;
+        font-size: 12px;
+      }
+      .secondary {
+        background: #e9edf4;
+        color: var(--ink);
+      }
+      .danger {
+        background: #8f2525;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 16px;
+      }
+      .form-grid .full {
+        grid-column: 1/-1;
+      }
+      .form-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .slot-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .slot img {
+        width: 100%;
+        height: 135px;
+        object-fit: cover;
+        background: #f1f1f1;
+        border-radius: 8px;
+      }
+      .slot {
+        min-width: 0;
+      }
+      .photo-actions {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .photo-actions button {
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+      .notice {
+        background: #fff5d8;
+        border: 1px solid #f0d58c;
+        padding: 13px;
+        border-radius: 9px;
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 15px 0;
+      }
+      #message {
+        margin-top: 12px;
+        color: var(--red);
+        font-size: 13px;
+      }
+      @media (max-width: 750px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        aside {
+          display: flex;
+          overflow-x: auto;
+          padding: 8px;
+          gap: 5px;
+        }
+        aside button {
+          white-space: nowrap;
+          width: auto;
+        }
+        main {
+          padding: 15px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .slot-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .form-grid .full {
+          grid-column: auto;
+        }
+        header {
+          padding: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="login">
+      <div class="brand">RISUKA PIALA</div>
+      <h1 style="margin-top: 18px">Admin Login</h1>
+      <p class="muted">Masuk ke panel pengelolaan bisnis.</p>
+      <form id="loginForm">
+        <label for="email">Email admin</label>
+        <input id="email" type="email" required autocomplete="username" />
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          required
+          autocomplete="current-password"
+        />
+        <button style="width: 100%; margin-top: 18px">
+          Masuk ke Dashboard
+        </button>
+        <p id="message" role="status"></p>
+      </form>
+    </section>
+
+    <div id="app">
+      <header>
+        <h2><span class="brand">RISUKA</span> PIALA · Admin</h2>
+        <button id="logout" class="secondary">Keluar</button>
+      </header>
+      <div class="layout">
+        <aside>
+          <button class="active" data-page="dashboard">Dashboard</button>
+          <button data-page="customers">Database Pelanggan</button>
+          <button data-page="orders">Riwayat Pesanan</button>
+          <button data-page="photos">Pengelolaan Foto</button>
+        </aside>
+        <main>
+          <section class="page active" id="dashboard">
+            <h1>Dashboard</h1>
+            <p class="muted">Ringkasan pengelolaan RISUKA PIALA.</p>
+            <div class="notice">
+              <b>Mode prototipe:</b> data tersimpan di browser ini saja. Login
+              demo bukan pengamanan produksi. Jangan masukkan data pribadi
+              pelanggan sungguhan sebelum autentikasi dan penyimpanan aman
+              dikonfigurasi melalui TampilKit Studio.
+            </div>
+            <div class="cards">
+              <div class="card">
+                Total pelanggan<strong id="totalCustomers">0</strong>
+              </div>
+              <div class="card">
+                Total pesanan<strong id="totalOrders">0</strong>
+              </div>
+              <div class="card">
+                Pesanan selesai<strong id="completedOrders">0</strong>
+              </div>
+            </div>
+            <div class="panel">
+              <h3>Alur kerja admin</h3>
+              <p>1. Tambahkan pelanggan ke database.</p>
+              <p>2. Catat pesanan yang masuk dan perbarui statusnya.</p>
+              <p>
+                3. Publikasikan riwayat pesanan yang layak ditampilkan kepada
+                umum melalui website.
+              </p>
+            </div>
+          </section>
+
+          <section class="page" id="customers">
+            <h1>Database Pelanggan</h1>
+            <p class="muted">
+              Kelola catatan pelanggan dalam prototipe lokal ini.
+            </p>
+            <div class="panel">
+              <h3 id="customerFormTitle">Tambah Pelanggan</h3>
+              <form id="customerForm">
+                <input type="hidden" id="customerId" />
+                <div class="form-grid">
+                  <div>
+                    <label for="customerName">Nama pelanggan / instansi *</label
+                    ><input id="customerName" required />
+                  </div>
+                  <div>
+                    <label for="customerType">Jenis pelanggan</label
+                    ><select id="customerType">
+                      <option>Sekolah</option>
+                      <option>Klub olahraga</option>
+                      <option>Organisasi</option>
+                      <option>Komunitas</option>
+                      <option>Perorangan</option>
+                      <option>Lainnya</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="customerPhone">Kontak (opsional)</label
+                    ><input id="customerPhone" />
+                  </div>
+                  <div>
+                    <label for="customerNotes">Catatan</label
+                    ><input id="customerNotes" />
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button id="saveCustomer">Simpan Pelanggan</button
+                  ><button type="button" class="secondary" id="cancelCustomer">
+                    Batal
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="toolbar">
+              <h3>Daftar Pelanggan</h3>
+              <input id="customerSearch" placeholder="Cari pelanggan..." />
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nama</th>
+                    <th>Jenis</th>
+                    <th>Kontak</th>
+                    <th>Catatan</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="customerRows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="page" id="orders">
+            <h1>Riwayat Pesanan</h1>
+            <p class="muted">Catat dan perbarui pesanan pelanggan.</p>
+            <div class="panel">
+              <h3 id="orderFormTitle">Tambah Pesanan</h3>
+              <form id="orderForm">
+                <input type="hidden" id="orderId" />
+                <div class="form-grid">
+                  <div>
+                    <label for="orderCustomer"
+                      >Nama pelanggan / instansi *</label
+                    ><input id="orderCustomer" required />
+                  </div>
+                  <div>
+                    <label for="orderProduct">Jenis piala / pesanan *</label
+                    ><input id="orderProduct" required />
+                  </div>
+                  <div>
+                    <label for="orderQty">Jumlah *</label
+                    ><input
+                      id="orderQty"
+                      type="number"
+                      min="1"
+                      value="1"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="orderDate">Tanggal pesanan</label
+                    ><input id="orderDate" type="date" />
+                  </div>
+                  <div>
+                    <label for="orderStatus">Status</label
+                    ><select id="orderStatus">
+                      <option>Baru</option>
+                      <option>Diproses</option>
+                      <option>Selesai</option>
+                      <option>Dibatalkan</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="orderLink">Tautan publikasi (opsional)</label
+                    ><input
+                      id="orderLink"
+                      type="url"
+                      placeholder="https://..."
+                    />
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button id="saveOrder">Simpan Pesanan</button
+                  ><button type="button" class="secondary" id="cancelOrder">
+                    Batal
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="toolbar">
+              <h3>Daftar Pesanan</h3>
+              <input id="orderSearch" placeholder="Cari pesanan..." />
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Pelanggan</th>
+                    <th>Pesanan</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="orderRows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="page" id="photos">
+            <h1>Pengelolaan Foto</h1>
+            <p class="muted">
+              Delapan slot foto untuk pratinjau pada browser ini.
+            </p>
+            <div class="notice">
+              Pilih foto terlebih dahulu, periksa pratinjau, lalu tekan Simpan
+              Foto. Data tersimpan di browser ini dan belum otomatis tersimpan
+              ke website publik/TampilKit Studio.
+            </div>
+            <div class="toolbar">
+              <div class="actions">
+                <button type="button" id="saveAllPhotos">
+                  Simpan Semua Foto
+                </button>
+                <button type="button" class="secondary" id="reloadPhotos">
+                  Muat Ulang Foto
+                </button>
+                <button type="button" class="danger" id="resetAllPhotos">
+                  Reset Semua Foto
+                </button>
+              </div>
+            </div>
+            <div class="slot-grid" id="slots"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      /*
+ PROTOTIPE LOKAL.
+ Ganti autentikasi dan penyimpanan dengan mekanisme aman TampilKit Studio
+ sebelum digunakan dengan data bisnis sungguhan.
+*/
+      const DEMO_EMAIL = "admin@risukapiala.local";
+      const DEMO_PASSWORD = "Risuka123!";
+      const store = {
+        read(key) {
+          try {
+            return JSON.parse(localStorage.getItem(key)) || [];
+          } catch {
+            return [];
+          }
+        },
+        write(key, value) {
+          try {
+            localStorage.setItem(key, JSON.stringify(value));
+            return true;
+          } catch {
+            return false;
+          }
+        },
+      };
+      let customers = store.read("risukaCustomers");
+      let orders = store.read("risukaOrders");
+      const $ = (id) => document.getElementById(id);
+      const uid = () =>
+        Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+      const safe = (value) =>
+        String(value ?? "").replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
+      function persist(key, data) {
+        if (!store.write(key, data)) {
+          alert("Penyimpanan browser penuh atau tidak tersedia.");
+          return false;
+        }
+        return true;
+      }
+      function showPage(page) {
+        document
+          .querySelectorAll(".page")
+          .forEach((el) => el.classList.toggle("active", el.id === page));
+        document
+          .querySelectorAll("aside button")
+          .forEach((el) =>
+            el.classList.toggle("active", el.dataset.page === page),
+          );
+      }
+      document
+        .querySelectorAll("aside button[data-page]")
+        .forEach((btn) =>
+          btn.addEventListener("click", () => showPage(btn.dataset.page)),
+        );
+      $("loginForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (
+          $("email").value.trim() === DEMO_EMAIL &&
+          $("password").value === DEMO_PASSWORD
+        ) {
+          $("login").style.display = "none";
+          $("app").style.display = "block";
+          $("message").textContent = "";
+          renderAll();
+        } else
+          $("message").textContent = "Email atau password demo tidak cocok.";
+      });
+      $("logout").onclick = () => location.reload();
+
+      function renderAll() {
+        $("totalCustomers").textContent = customers.length;
+        $("totalOrders").textContent = orders.length;
+        $("completedOrders").textContent = orders.filter(
+          (o) => o.status === "Selesai",
+        ).length;
+        renderCustomers();
+        renderOrders();
+        renderPhotos();
+      }
+      function resetCustomerForm() {
+        $("customerForm").reset();
+        $("customerId").value = "";
+        $("customerFormTitle").textContent = "Tambah Pelanggan";
+        $("saveCustomer").textContent = "Simpan Pelanggan";
+      }
+      $("cancelCustomer").onclick = resetCustomerForm;
+      $("customerForm").onsubmit = (e) => {
+        e.preventDefault();
+        const id = $("customerId").value;
+        const item = {
+          id: id || uid(),
+          name: $("customerName").value.trim(),
+          type: $("customerType").value,
+          phone: $("customerPhone").value.trim(),
+          notes: $("customerNotes").value.trim(),
+        };
+        if (!item.name) return;
+        const next = id
+          ? customers.map((c) => (c.id === id ? item : c))
+          : [item, ...customers];
+        if (persist("risukaCustomers", next)) {
+          customers = next;
+          resetCustomerForm();
+          renderAll();
+        }
+      };
+      function renderCustomers() {
+        const query = $("customerSearch").value.toLowerCase();
+        const list = customers.filter((c) =>
+          [c.name, c.type, c.phone, c.notes]
+            .join(" ")
+            .toLowerCase()
+            .includes(query),
+        );
+        $("customerRows").innerHTML = list.length
+          ? list
+              .map(
+                (c) =>
+                  `<tr><td>${safe(c.name)}</td><td>${safe(c.type)}</td><td>${safe(c.phone || "-")}</td><td>${safe(c.notes || "-")}</td><td><div class="actions"><button class="secondary" data-edit-customer="${safe(c.id)}">Edit</button><button class="danger" data-delete-customer="${safe(c.id)}">Hapus</button></div></td></tr>`,
+              )
+              .join("")
+          : '<tr><td colspan="5">Belum ada data pelanggan.</td></tr>';
+      }
+      $("customerSearch").addEventListener("input", renderCustomers);
+      $("customerRows").addEventListener("click", (e) => {
+        const edit = e.target.closest("[data-edit-customer]");
+        const del = e.target.closest("[data-delete-customer]");
+        if (edit) {
+          const c = customers.find((x) => x.id === edit.dataset.editCustomer);
+          if (!c) return;
+          $("customerId").value = c.id;
+          $("customerName").value = c.name;
+          $("customerType").value = c.type;
+          $("customerPhone").value = c.phone;
+          $("customerNotes").value = c.notes;
+          $("customerFormTitle").textContent = "Edit Pelanggan";
+          $("saveCustomer").textContent = "Simpan Perubahan";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        if (del && confirm("Hapus catatan pelanggan ini?")) {
+          const next = customers.filter(
+            (c) => c.id !== del.dataset.deleteCustomer,
+          );
+          if (persist("risukaCustomers", next)) {
+            customers = next;
+            renderAll();
+          }
+        }
+      });
+      function resetOrderForm() {
+        $("orderForm").reset();
+        $("orderId").value = "";
+        $("orderQty").value = 1;
+        $("orderFormTitle").textContent = "Tambah Pesanan";
+        $("saveOrder").textContent = "Simpan Pesanan";
+      }
+      $("cancelOrder").onclick = resetOrderForm;
+      $("orderForm").onsubmit = (e) => {
+        e.preventDefault();
+        const id = $("orderId").value;
+        const item = {
+          id: id || uid(),
+          customer: $("orderCustomer").value.trim(),
+          product: $("orderProduct").value.trim(),
+          qty: Number($("orderQty").value),
+          date: $("orderDate").value,
+          status: $("orderStatus").value,
+          link: $("orderLink").value.trim(),
+        };
+        if (!item.customer || !item.product || item.qty < 1) return;
+        const next = id
+          ? orders.map((o) => (o.id === id ? item : o))
+          : [item, ...orders];
+        if (persist("risukaOrders", next)) {
+          orders = next;
+          resetOrderForm();
+          renderAll();
+        }
+      };
+      function renderOrders() {
+        const query = $("orderSearch").value.toLowerCase();
+        const list = orders.filter((o) =>
+          [o.customer, o.product, o.date, o.status]
+            .join(" ")
+            .toLowerCase()
+            .includes(query),
+        );
+        $("orderRows").innerHTML = list.length
+          ? list
+              .map(
+                (o) =>
+                  `<tr><td>${safe(o.customer)}</td><td>${safe(o.product)}${o.link ? ' <br><a href="' + safe(o.link) + '" target="_blank" rel="noopener">Publikasi</a>' : ""}</td><td>${safe(o.qty)}</td><td>${safe(o.date || "-")}</td><td>${safe(o.status)}</td><td><div class="actions"><button class="secondary" data-edit-order="${safe(o.id)}">Edit</button><button class="danger" data-delete-order="${safe(o.id)}">Hapus</button></div></td></tr>`,
+              )
+              .join("")
+          : '<tr><td colspan="6">Belum ada riwayat pesanan.</td></tr>';
+      }
+      $("orderSearch").addEventListener("input", renderOrders);
+      $("orderRows").addEventListener("click", (e) => {
+        const edit = e.target.closest("[data-edit-order]");
+        const del = e.target.closest("[data-delete-order]");
+        if (edit) {
+          const o = orders.find((x) => x.id === edit.dataset.editOrder);
+          if (!o) return;
+          $("orderId").value = o.id;
+          $("orderCustomer").value = o.customer;
+          $("orderProduct").value = o.product;
+          $("orderQty").value = o.qty;
+          $("orderDate").value = o.date;
+          $("orderStatus").value = o.status;
+          $("orderLink").value = o.link;
+          $("orderFormTitle").textContent = "Edit Pesanan";
+          $("saveOrder").textContent = "Simpan Perubahan";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        if (del && confirm("Hapus catatan pesanan ini?")) {
+          const next = orders.filter((o) => o.id !== del.dataset.deleteOrder);
+          if (persist("risukaOrders", next)) {
+            orders = next;
+            renderAll();
+          }
+        }
+      });
+      const pendingPhotos = {};
+
+      function photoDefaults() {
+        return Array.from(
+          { length: 8 },
+          (_, i) => "assets/piala-0" + ((i % 4) + 1) + ".jpg",
+        );
+      }
+      function renderPhotos() {
+        const defaults = photoDefaults();
+        const saved = store.read("risukaPialaImages");
+        $("slots").innerHTML = defaults
+          .map((src, i) => {
+            const current = saved[i] || src;
+            return `<div class="panel slot" data-slot="${i}">
+      <b>Foto ${i + 1}</b>
+      <img id="photoPreview${i}" src="${current}" alt="Pratinjau foto ${i + 1}">
+      <label for="photoFile${i}">Pilih / ganti foto</label>
+      <input id="photoFile${i}" type="file" accept="image/*" data-photo="${i}">
+      <small>Foto dikompres otomatis agar lebih hemat penyimpanan.</small>
+      <div class="photo-actions">
+        <button type="button" data-save-photo="${i}">Simpan Foto</button>
+        <button type="button" class="secondary" data-reset-photo="${i}">Reset Default</button>
+        <button type="button" class="danger" data-delete-photo="${i}">Hapus Foto</button>
+      </div>
+      <small id="photoStatus${i}">${pendingPhotos[i] ? "Foto baru belum disimpan." : saved[i] ? "Foto tersimpan di browser." : "Menggunakan foto default."}</small>
+    </div>`;
+          })
+          .join("");
+      }
+      function compressPhoto(file) {
+        return new Promise((resolve, reject) => {
+          if (!file || !file.type.startsWith("image/")) {
+            reject(new Error("Pilih file gambar yang valid."));
+            return;
+          }
+          const reader = new FileReader();
+          reader.onerror = () => reject(new Error("File foto gagal dibaca."));
+          reader.onload = () => {
+            const img = new Image();
+            img.onerror = () => reject(new Error("Foto tidak dapat dibuka."));
+            img.onload = () => {
+              const maxSide = 1200;
+              const scale = Math.min(
+                1,
+                maxSide / Math.max(img.width, img.height),
+              );
+              const canvas = document.createElement("canvas");
+              canvas.width = Math.max(1, Math.round(img.width * scale));
+              canvas.height = Math.max(1, Math.round(img.height * scale));
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+              resolve(canvas.toDataURL("image/jpeg", 0.78));
+            };
+            img.src = reader.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+      $("slots").addEventListener("change", (e) => {
+        const input = e.target.closest("input[data-photo]");
+        if (!input || !input.files || !input.files[0]) return;
+        const index = Number(input.dataset.photo);
+        const file = input.files[0];
+        $("photoPreview" + index).src = URL.createObjectURL(file);
+        $("photoStatus" + index).textContent =
+          "Pratinjau saja — tekan Simpan Foto untuk menyimpan.";
+        pendingPhotos[index] = file;
+      });
+      async function savePhoto(index) {
+        const saved = store.read("risukaPialaImages");
+        if (!pendingPhotos[index]) {
+          alert(
+            "Pilih foto terlebih dahulu untuk slot Foto " + (index + 1) + ".",
+          );
+          return false;
+        }
+        try {
+          saved[index] = await compressPhoto(pendingPhotos[index]);
+          if (!persist("risukaPialaImages", saved)) return false;
+          delete pendingPhotos[index];
+          return true;
+        } catch (err) {
+          alert(err.message || "Foto gagal disimpan.");
+          return false;
+        }
+      }
+      $("slots").addEventListener("click", async (e) => {
+        const saveBtn = e.target.closest("[data-save-photo]");
+        const deleteBtn = e.target.closest("[data-delete-photo]");
+        const resetBtn = e.target.closest("[data-reset-photo]");
+        if (saveBtn) {
+          const index = Number(saveBtn.dataset.savePhoto);
+          if (await savePhoto(index)) {
+            renderPhotos();
+            alert("Foto " + (index + 1) + " berhasil disimpan di browser ini.");
+          }
+          return;
+        }
+        if (deleteBtn) {
+          const index = Number(deleteBtn.dataset.deletePhoto);
+          if (
+            !confirm(
+              "Hapus foto tersimpan pada slot Foto " +
+                (index + 1) +
+                "? Slot akan kembali ke foto default website.",
+            )
+          )
+            return;
+          const saved = store.read("risukaPialaImages");
+          saved[index] = null;
+          if (persist("risukaPialaImages", saved)) {
+            delete pendingPhotos[index];
+            renderPhotos();
+            alert(
+              "Foto tersimpan pada slot " +
+                (index + 1) +
+                " telah dihapus. Foto default digunakan.",
+            );
+          }
+          return;
+        }
+        if (resetBtn) {
+          const index = Number(resetBtn.dataset.resetPhoto);
+          if (
+            !confirm(
+              "Kembalikan slot Foto " + (index + 1) + " ke gambar default?",
+            )
+          )
+            return;
+          const saved = store.read("risukaPialaImages");
+          saved[index] = null;
+          if (persist("risukaPialaImages", saved)) {
+            delete pendingPhotos[index];
+            renderPhotos();
+            alert("Slot Foto " + (index + 1) + " kembali ke gambar default.");
+          }
+        }
+      });
+      $("saveAllPhotos").addEventListener("click", async () => {
+        const indices = Object.keys(pendingPhotos).map(Number);
+        if (!indices.length) {
+          alert("Belum ada foto baru yang dipilih.");
+          return;
+        }
+        const saved = store.read("risukaPialaImages");
+        try {
+          for (const index of indices)
+            saved[index] = await compressPhoto(pendingPhotos[index]);
+          if (persist("risukaPialaImages", saved)) {
+            indices.forEach((index) => delete pendingPhotos[index]);
+            renderPhotos();
+            alert(indices.length + " foto berhasil disimpan di browser ini.");
+          }
+        } catch (err) {
+          alert(err.message || "Ada foto yang gagal disimpan.");
+        }
+      });
+      $("reloadPhotos").addEventListener("click", () => {
+        if (
+          Object.keys(pendingPhotos).length &&
+          !confirm(
+            "Pratinjau foto yang belum disimpan akan dibuang. Muat ulang data tersimpan?",
+          )
+        )
+          return;
+        Object.keys(pendingPhotos).forEach(
+          (index) => delete pendingPhotos[index],
+        );
+        renderPhotos();
+        alert("Data foto dari penyimpanan browser dimuat ulang.");
+      });
+      $("resetAllPhotos").addEventListener("click", () => {
+        if (
+          !confirm(
+            "Reset semua 8 slot ke foto default? Foto khusus yang tersimpan akan dihapus dari browser ini.",
+          )
+        )
+          return;
+        if (persist("risukaPialaImages", [])) {
+          Object.keys(pendingPhotos).forEach(
+            (index) => delete pendingPhotos[index],
+          );
+          renderPhotos();
+          alert("Semua slot kembali ke foto default.");
+        }
+      });
+    </script>
+  </body>
+</html>
